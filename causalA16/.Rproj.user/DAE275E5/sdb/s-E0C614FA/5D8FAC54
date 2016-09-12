@@ -1,0 +1,18 @@
+{
+    "contents" : "library(data.table)\nlibrary(causalA16)\na<-simulate_potential_outcomes(1000, 124)\n\ncalc_naive_difference_in_means(a)\n",
+    "created" : 1472590157768.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "1158673045",
+    "id" : "5D8FAC54",
+    "lastKnownWriteTime" : 1472590017,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
