@@ -1,0 +1,11 @@
+\documentclass{article}
+
+\begin{document}
+
+<<include=FALSE>>=
+c<-3+1
+c
+@
+
+
+\end{document}
