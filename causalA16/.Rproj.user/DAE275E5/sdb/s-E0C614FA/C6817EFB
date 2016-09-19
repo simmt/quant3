@@ -7,12 +7,12 @@
     "hash" : "3360145285",
     "id" : "C6817EFB",
     "lastKnownWriteTime" : 1472591920,
-    "path" : "~/causalA16/R/potential_outcomes.R",
+    "path" : "~/GitHub/quant3/causalA16/R/potential_outcomes.R",
     "project_path" : "R/potential_outcomes.R",
     "properties" : {
         "tempName" : "Untitled1"
     },
-    "relative_order" : 8,
+    "relative_order" : 9,
     "source_on_save" : false,
     "type" : "r_source"
 }
