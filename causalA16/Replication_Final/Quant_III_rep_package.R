@@ -1,4 +1,4 @@
-
+###https://github.com/simmt/quant3/tree/master/causalA16/Replication_Final
 library(foreign)
 library(sandwich)
 library(lmtest)
