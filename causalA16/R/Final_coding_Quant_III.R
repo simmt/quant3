@@ -1,4 +1,5 @@
-
+\subsection*{R Code}
+\begin{verbatim}
 library(foreign)
 library(sandwich)
 library(lmtest)
@@ -11,7 +12,7 @@ library(causalA16)
 library(ipw)
 library(ggplot2)
 
-Bes_Per<-read.dta("~/GitHub/quant3/causalA16/Replication_Final/AER.dta")
+Bes_Per<-read.dta("~/GitHub/quant3/causalA16/inst/extdata/Besley/AER.dta")
 Bes_Per$region<-as.factor(countrycode(Bes_Per$countryname, "country.name",
                                       "region"))
 Bes_Per$continent<-as.factor(countrycode(Bes_Per$countryname, "country.name",
@@ -105,7 +106,7 @@ confint(reg8_bs, level=.90, type="norm")
 # Matching with English legal origin
 
 replication2a <- na.omit(Bes_Per[,c("mincometaxrevenuegdp", "l_eng",
-                                    "avg_war75", "avg_dem75", "avg_demparl75")])
+                                       "avg_war75", "avg_dem75", "avg_demparl75")])
 Y <- replication2a$mincometaxrevenuegdp
 Tr1 <- replication2a$l_eng
 glm1 <- glm(Tr1 ~ avg_war75 + avg_dem75 + avg_demparl75, family = binomial,
@@ -118,7 +119,7 @@ summary(rr1)
 # Matching with French legal origin
 
 replication2b <- na.omit(Bes_Per[,c("mincometaxrevenuegdp", "l_fre",
-                                    "avg_war75", "avg_dem75", "avg_demparl75")])
+                                       "avg_war75", "avg_dem75", "avg_demparl75")])
 Y <- replication2b$mincometaxrevenuegdp
 Tr2 <- replication2b$l_fre
 glm4 <- glm(Tr2 ~ avg_war75 + avg_dem75 + avg_demparl75, family = binomial,
@@ -131,7 +132,7 @@ summary(rr4)
 # Matching with Socialist legal origin
 
 replication2 <- na.omit(Bes_Per[,c("mincometaxrevenuegdp", "l_soc",
-                                   "avg_war75", "avg_dem75", "avg_demparl75")])
+                                       "avg_war75", "avg_dem75", "avg_demparl75")])
 Y <- replication2$mincometaxrevenuegdp
 Tr3 <- replication2$l_soc
 glm5 <- glm(Tr3 ~ avg_war75 + avg_dem75 + avg_demparl75, family = binomial,
@@ -156,7 +157,7 @@ Bes_Per$l_orig[Bes_Per$l_sca==1]<-"sca"
 Bes_Per$l_orig<-as.factor(Bes_Per$l_orig)
 
 # Add state antiquity variable
-state_antiquity<-read.csv("~/GitHub/quant3/causalA16/Replication_Final/sratiov3-Table 1.csv")
+state_antiquity<-read.csv("~/Downloads/state_antiquity/sratiov3-Table 1.csv")
 names(state_antiquity)[1]<-paste("ncode")
 Bes_Per_Eng_Fr_sa<-merge(Bes_Per, state_antiquity, by = c("ncode"))
 Bes_Per_Eng_Fr_sa$region<-as.factor(countrycode(Bes_Per_Eng_Fr_sa$countryname,
